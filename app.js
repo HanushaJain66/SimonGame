@@ -6,14 +6,15 @@ let started=false;
 let level=0;
 let h2=document.querySelector('h2');
 
-
+let start=document.querySelector('#start');
 
 // BECAUSE WE WANT THAT WHENEVER ANY BUTTO ON THE SCREEN IS PRESSED THEN THE GAME WILL START WE ARE GOING TO ADD EVENET LISTNER ON THE DOCUMENT ONLY
-document.addEventListener("keypress", function(event) {
+start.addEventListener("click", function(event) {
     if (!started) {
         console.log("Game is started");
         started = true;
         levelup();
+        start.style.display="none";
     }
 });
 
@@ -99,4 +100,6 @@ function reset()
     gameSeq=[];
     started=false;
     level=0;
+    start.style.display="block";
+    start.style.textAlign="center";
 }
